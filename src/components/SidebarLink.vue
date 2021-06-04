@@ -1,22 +1,32 @@
 <template>
-  <div class="sidebar-link flex text-white items-center mx-5 bg-gray-700 rounded-md">
-    <!-- icon -->
-    <i class='bx bx-home text-lg flex justify-center items-center w-10 h-10'></i>
-    <p class="font-semibold" :class="{active}">
-      Dashboard
-    </p>
+  <div class="sidebar-link text-white mx-5 rounded-md h-10 hover:bg-gray-800 cursor-pointer" :class="{active}">
+    <div class="flex items-center">
+      <i :class="iconlink" class="text-lg flex items-center justify-center w-10 h-10 absolute"></i>
+      <p class="tracking-wide ml-10">
+        {{namelink}}
+      </p>
+    </div>
   </div>
 </template>
 
 <script>
   export default {
-    props: ['active'],
+    props: ['active', 'iconlink', 'namelink'],
   }
 </script>
 
 <style scoped>
-  .sidebar-link p.active {
-    display: none;
+  .sidebar-link {
+    line-height: 2.5rem;
+  }
+
+  .sidebar-link p {
+    white-space: nowrap;
+    transition: all 0.5s ease;
+  }
+
+  .sidebar-link.active p {
+    opacity: 0;
     transition: all 0.5s ease;
   }
 </style>

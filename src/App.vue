@@ -2,16 +2,18 @@
   <div class="flex">
     <Sidebar :active="active" />
     <div class="w-full">
-      <i class='bx bx-menu text-3xl' @click="minimizeMenu"></i>
+      <Navbar @mini="minimize" />
     </div>
   </div>
 </template>
 
 <script>
   import Sidebar from './layouts/Sidebar.vue'
+  import Navbar from './layouts/Navbar.vue'
   export default {
     components: {
-      Sidebar
+      Sidebar,
+      Navbar
     },
     data() {
       return {
@@ -19,7 +21,8 @@
       }
     },
     methods: {
-      minimizeMenu() {
+      minimize() {
+        console.log('ok')
         return this.active = !this.active
       }
     }
