@@ -1,8 +1,8 @@
 <template>
   <div class="flex">
-    <Sidebar :active="active" />
+    <Sidebar />
     <div class="w-full">
-      <Navbar @mini="minimize" />
+      <Navbar />
     </div>
   </div>
 </template>
@@ -15,17 +15,6 @@
       Sidebar,
       Navbar
     },
-    data() {
-      return {
-        active: false
-      }
-    },
-    methods: {
-      minimize() {
-        console.log('ok')
-        return this.active = !this.active
-      }
-    }
   }
 </script>
 
