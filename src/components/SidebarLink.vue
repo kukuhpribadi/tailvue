@@ -1,18 +1,18 @@
 <template>
   <div class="sidebar-link text-white mx-5 rounded-md h-10 hover:bg-gray-800 cursor-pointer"
     :class="{active, sidebarActiveFun}">
-    <div class="flex items-center">
+    <router-link :to="exlink" class="flex items-center">
       <i :class="iconlink" class="text-lg flex items-center justify-center w-10 h-10 absolute"></i>
       <p class="tracking-wide ml-10">
         {{namelink}}
       </p>
-    </div>
+    </router-link>
   </div>
 </template>
 
 <script>
   export default {
-    props: ['iconlink', 'namelink'],
+    props: ['iconlink', 'namelink', 'exlink'],
     data() {
       return {
         active: null

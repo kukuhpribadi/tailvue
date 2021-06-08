@@ -3,6 +3,7 @@
     <Sidebar />
     <div class="w-full">
       <Navbar />
+      <router-view></router-view>
     </div>
   </div>
 </template>
